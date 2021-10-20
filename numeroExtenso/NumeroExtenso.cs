@@ -44,6 +44,24 @@ public class NumeroExtenso
 
 				Console.ReadLine();
 			}
+			else if (len == 4)
+            {
+				int ValorPrimario = int.Parse(Globals.valor.ToString().Substring(0, 1));
+				int ValorSecundario = int.Parse(Globals.valor.ToString().Substring(1, 1));
+				int ValorTerciario = int.Parse(Globals.valor.ToString().Substring(2, 1));
+				int ValorQuaternario = int.Parse(Globals.valor.ToString().Substring(3, 1));
+
+				ValorPrimario = ValorPrimario * 1000;
+				ValorSecundario = ValorSecundario * 100;
+				ValorTerciario = ValorTerciario * 10;
+
+				Console.WriteLine("\n" + RetorneValorString(ValorPrimario)
+								  + (ValorSecundario > 0 ? " " + RetorneValorString(ValorSecundario) : "")
+								  + (ValorTerciario > 0 ? separador + RetorneValorString(ValorTerciario) : "")
+								  + (ValorQuaternario > 0 ? separador + RetorneValorString(ValorQuaternario) : ""));
+
+				Console.ReadLine();
+			}
 		}
 	}
 
@@ -93,6 +111,16 @@ public class NumeroExtenso
 			case 700: return "Setecentos";
 			case 800: return "Oitocentos";
 			case 900: return "Novecentos";
+
+			case 1000: return "Mil";
+			case 2000: return "Dois Mil";
+			case 3000: return "Três Mil";
+			case 4000: return "Quatro Mil";
+			case 5000: return "Cinco Mil";
+			case 6000: return "Seis Mil";
+			case 7000: return "Sete Mil";
+			case 8000: return "Oito Mil";
+			case 9000: return "Nove Mil";
 
 			default: return "Valor inválido";
 		}
